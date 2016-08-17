@@ -69,7 +69,7 @@ class PatientDetail extends React.Component {
   _redirectToList() {
     d3.selectAll("svg > *").remove();
     d3.selectAll("svg").remove();
-    hashHistory.push('/patient');
+    hashHistory.push('/');
   }
 
   render() {
@@ -81,7 +81,6 @@ class PatientDetail extends React.Component {
       this._generateChart();
       return (
         <div>
-
           <button onClick={this._redirectToList}>{'< Patients'}</button>
           <div className='patient-data'>
             <h2>{this.state.patient.name.last}, {this.state.patient.name.first}</h2>

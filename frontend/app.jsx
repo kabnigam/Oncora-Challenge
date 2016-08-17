@@ -3,6 +3,7 @@ const ReactDOM = require('react-dom');
 const reactRouter = require('react-router');
 const Router = reactRouter.Router;
 const Route = reactRouter.Route;
+const IndexRoute = reactRouter.IndexRoute;
 const hashHistory = reactRouter.hashHistory;
 const PatientList = require('./components/list.jsx');
 const PatientDetail = require('./components/detail.jsx');
@@ -21,7 +22,7 @@ class App extends React.Component {
 
 const routes = (
   <Route path='/' component={App}>
-    <Route path="patient" component={PatientList}/>
+    <IndexRoute component={PatientList}/>
     <Route path="patient/:id" component={PatientDetail}/>
   </Route>
 

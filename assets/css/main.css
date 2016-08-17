@@ -1,6 +1,14 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   min-width: 1350px;
+  font-weight: 400;
+  letter-spacing: 0.075em;
+  line-height: 1.65em;
+  background: aliceblue;
+}
+
+table tbody tr:nth-child(2n ) {
+    background-color: rgba(59, 236, 205, 0.25);
 }
 
 td {
@@ -11,8 +19,10 @@ td {
 table {
   margin: 5% auto;
   border-collapse: collapse;
-
+  width: 80%;
 }
+
+
 
 .all-patient-data:hover {
   background-color: lightgray;
@@ -34,12 +44,26 @@ table {
 
 button {
     margin: 2% 0 0 10%;
-    padding: 20px;
-    font-size: 15px;
-    border: none;
-    background: #f1fdff;
-    box-sizing: border-box;
-    border: 1px solid #c4f8ff;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: black;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: inset 0 0 0 2px #fff;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button:hover {
@@ -61,10 +85,21 @@ text {
 
 .disease-data {
     text-align: left;
-    padding-left: 7%;
+    padding-left: 6%;
 }
 
 .weight-chart {
   width: 28%;
   margin-top: 30px;
+}
+
+h2 {
+  color: black;
+  font-weight: 800;
+  letter-spacing: 0.225em;
+
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  font-size: 1.35em;
+  line-height: 1.75em;
 }

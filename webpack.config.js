@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/app.jsx",
@@ -17,8 +19,20 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    })
+  ],
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },
-  devtool: 'source-map'
+  devtool: 'cheap-module-source-map'
 };

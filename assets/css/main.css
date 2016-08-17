@@ -1,0 +1,70 @@
+body {
+  font-family: 'Lato', sans-serif;
+  min-width: 1350px;
+}
+
+td {
+  text-align: center;
+  padding: 10px 40px;
+}
+
+table {
+  margin: 5% auto;
+  border-collapse: collapse;
+
+}
+
+.all-patient-data:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+
+
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.patient-data {
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button {
+    margin: 2% 0 0 10%;
+    padding: 20px;
+    font-size: 15px;
+    border: none;
+    background: #f1fdff;
+    box-sizing: border-box;
+    border: 1px solid #c4f8ff;
+}
+
+button:hover {
+  cursor: pointer;
+  border: 1px solid black;
+
+}
+
+svg {
+    transform: translateX(95%) translateY(-25%);
+    margin-top: 20px;
+}
+
+text {
+    font-size: 15px;
+    font-weight: 300;
+    font-family: inherit;
+}
+
+.disease-data {
+    text-align: left;
+    padding-left: 7%;
+}
+
+.weight-chart {
+  width: 28%;
+  margin-top: 30px;
+}

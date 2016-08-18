@@ -5,8 +5,6 @@ const d3 = require('d3');
 
 
 
-
-
 class PatientDetail extends React.Component {
 
   constructor(props, context) {
@@ -76,7 +74,6 @@ class PatientDetail extends React.Component {
 
     let age = undefined;
     if (this.state.patient) {
-
       age = this._getAge(this.state.patient.dob);
       this._generateChart();
       return (

@@ -4,7 +4,10 @@
   "description": "A little challenge to demonstrate your React skills.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require setup.js --compilers js:babel-register --recursive",
+    "test:watch": "npm test -- --watch",
+    "build": "webpack",
+    "dev": "webpack-dev-server --port 3000 --devtool eval --progress --colors --hot --content-base dist"
   },
   "repository": {
     "type": "git",
@@ -28,5 +31,13 @@
     "react-dom": "^15.3.0",
     "react-router": "^2.6.1",
     "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-register": "^6.11.6",
+    "chai": "^3.5.0",
+    "enzyme": "^1.2.0",
+    "mocha": "^3.0.2",
+    "react-addons-test-utils": "^15.3.0",
+    "sinon": "^1.17.5"
   }
 }

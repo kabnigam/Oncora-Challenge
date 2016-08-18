@@ -16,7 +16,6 @@ class PatientList extends React.Component {
   }
 
   componentDidMount() {
-
     this._getData();
   }
 
@@ -29,7 +28,7 @@ class PatientList extends React.Component {
 
 
   render() {
-    
+
     let rows = [[<tr><th>Name</th><th>MRN</th><th>DOB</th><th>Sex</th><th>Treatment Site</th></tr>]];
     if (this.state.patientData.length > 0) {
       let ordered = this.state.patientData.sort(function(x,y) {

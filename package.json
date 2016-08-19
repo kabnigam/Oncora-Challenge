@@ -29,7 +29,9 @@
     "react": "^15.3.0",
     "react-d3-basic": "^1.6.11",
     "react-dom": "^15.3.0",
+    "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
+    "redux": "^3.5.2",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
@@ -38,6 +40,7 @@
     "enzyme": "^1.2.0",
     "mocha": "^3.0.2",
     "react-addons-test-utils": "^15.3.0",
+    "redux-devtools": "^3.3.1",
     "sinon": "^1.17.5"
   }
 }

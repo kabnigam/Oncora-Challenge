@@ -2,8 +2,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const d3 = require('d3');
 const PatientIndexItem = require('./patient_index_item.jsx');
-const Store = require('./store.js');
-const Actions = require('./actions.js');
+const Store = require('./../store/store.js');
+const Actions = require('./../actions/actions.js');
 
 
 

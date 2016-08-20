@@ -2,7 +2,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const d3 = require('d3');
-const Store = require('./store.js');
+const Store = require('./../store/store.js');
+const Actions = require('./../actions/actions.js');
 
 
 
@@ -27,7 +28,7 @@ class PatientDetail extends React.Component {
   }
 
   componentDidMount() {
-    Store.fetchPatient(this.props.params.id);
+    Store.dispatch(Actions.fetchPatient(this.props.params.id));
   }
 
   // componentDidMount() {

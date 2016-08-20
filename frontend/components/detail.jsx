@@ -9,6 +9,7 @@ class PatientDetail extends React.Component {
 
   constructor(props, context) {
     super(props, context);
+
     this.state = {
       patient: undefined,
       avg: undefined,
@@ -19,14 +20,24 @@ class PatientDetail extends React.Component {
   componentDidMount() {
     d3.json("patients.json", data => {
       let match = this.props.params.id;
+      let genderData = [];
       let target = undefined;
-      for (var i = 0; i < data.length; i++) {
+
+      for (let i = 0; i < data.length; i++) {
         if (data[i].mrn === match) {
           target = data[i];
         }
       }
-      let weightRange = d3.extent(data, function(d) {return d.weight;});
-      let avgWeight = d3.mean(data, function(d) {return d.weight;});
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].sex === target.sex) {
+          genderData.push(data[i]);
+        }
+      }
+
+
+      let weightRange = d3.extent(genderData, function(d) {return d.weight;});
+      let avgWeight = d3.mean(genderData, function(d) {return d.weight;});
 
       this.setState({patient: target, avg: avgWeight, range: weightRange});
     });

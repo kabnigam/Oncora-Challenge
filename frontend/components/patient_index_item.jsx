@@ -6,6 +6,7 @@ const hashHistory = require('react-router').hashHistory;
 class PatientIndexItem extends React.Component {
 
   _redirectToPatient(mrn) {
+    //would like to somehow pass patient in here as prop, however cannot exactly figure out how
     hashHistory.push(`/patient/${mrn}`);
   }
 

@@ -2,6 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const hashHistory = require('react-router').hashHistory;
 const d3 = require('d3');
+const Store = require('./store.js');
 
 
 
@@ -16,21 +17,34 @@ class PatientDetail extends React.Component {
     };
   }
 
-  componentDidMount() {
-    d3.json("patients.json", data => {
-      let match = this.props.params.id;
-      let target = undefined;
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].mrn === match) {
-          target = data[i];
-        }
-      }
-      let weightRange = d3.extent(data, function(d) {return d.weight;});
-      let avgWeight = d3.mean(data, function(d) {return d.weight;});
-
-      this.setState({patient: target, avg: avgWeight, range: weightRange});
+  componentWillMount() {
+    Store.subscribe(() => {
+      var state = Store.getState();
+      this.setState({
+        patient: state.patients.items
+      });
     });
   }
+
+  componentDidMount() {
+    Store.fetchPatient(this.props.params.id);
+  }
+
+  // componentDidMount() {
+  //   d3.json("patients.json", data => {
+  //     let match = this.props.params.id;
+  //     let target = undefined;
+  //     for (var i = 0; i < data.length; i++) {
+  //       if (data[i].mrn === match) {
+  //         target = data[i];
+  //       }
+  //     }
+  //     let weightRange = d3.extent(data, function(d) {return d.weight;});
+  //     let avgWeight = d3.mean(data, function(d) {return d.weight;});
+  //
+  //     this.setState({patient: target, avg: avgWeight, range: weightRange});
+  //   });
+  // }
 
 
   _getAge(dateString) {

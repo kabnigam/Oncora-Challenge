@@ -13,7 +13,8 @@ class PatientList extends React.Component {
     super(props, context);
     this.state = {
       patientData: [],
-      orderBy: "name"
+      orderBy: "name",
+      reverse: false
     };
   }
 
@@ -70,7 +71,19 @@ class PatientList extends React.Component {
   }
 
   _setOrder(col) {
-    this.setState({orderBy: col});
+    if (col === this.state.orderBy) {
+      this.setState({reverse: !this.state.reverse});
+    } else {
+      this.setState({orderBy: col, reverse: false});
+    }
+  }
+
+  _reverse(arr) {
+    let reversed = [];
+    for (var i = arr.length-1; i >= 0; i--) {
+      reversed.push(arr[i]);
+    }
+    return reversed;
   }
 
 
@@ -93,10 +106,14 @@ class PatientList extends React.Component {
 
     if (this.state.patientData.length > 0) {
       let ordered = this._orderBy();
+      if (this.state.reverse) {
+        ordered = this._reverse(ordered);
+      }
       ordered.forEach(patient => {
         rows.push([<PatientIndexItem key={patient.mrn} patient={patient} age={this._getAge(patient.dob)}/>]);
       });
     }
+
 
     return (
 

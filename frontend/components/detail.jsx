@@ -35,7 +35,6 @@ class PatientDetail extends React.Component {
         }
       }
 
-
       let weightRange = d3.extent(genderData, function(d) {return d.weight;});
       let avgWeight = d3.mean(genderData, function(d) {return d.weight;});
 
@@ -43,7 +42,7 @@ class PatientDetail extends React.Component {
     });
   }
 
-
+  //not the dry-est, but again am unsure how to pass patient object w/age in as props using hashHistory
   _getAge(dateString) {
     var today = new Date();
     var birthDate = new Date(dateString);
@@ -60,14 +59,19 @@ class PatientDetail extends React.Component {
     var svgContainer = d3.select("body").append("svg").attr("width", 500).attr("height", 200);
     var axisScale = d3.scaleLinear().domain(this.state.range).range([this.state.range[0],400]);
     var axisBot = d3.axisBottom(axisScale);
+
     var ticks = [this.state.range[0], this.state.range[1], this.state.avg, this.state.patient.weight];
     axisBot.tickValues(ticks);
+
     var xAxisGroup = svgContainer.append("g").call(axisBot);
+
     let that = this;
     let target = d3.selectAll('g.tick').filter(function(d){
-      return d==that.state.patient.weight;
+      return d === that.state.patient.weight;
     } );
+
     target.append("circle").attr("r", 8).attr('fill','red');
+
     if (this.state.patient.weight != this.state.range[0] && this.state.patient.weight != this.state.range[1]) {
       target.select('line').remove();
       target.select('text').remove();
@@ -82,11 +86,11 @@ class PatientDetail extends React.Component {
   }
 
   render() {
-
     let age = undefined;
     if (this.state.patient) {
       age = this._getAge(this.state.patient.dob);
       this._generateChart();
+
       return (
         <div>
           <button onClick={this._redirectToList}>{'< Patients'}</button>

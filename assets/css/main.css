@@ -19,10 +19,38 @@ td {
 table {
   margin: 5% auto;
   border-collapse: collapse;
-  width: 80%;
+  width: 70%;
 }
 
+th:hover {
+  cursor: pointer;
+}
 
+.patient-table {
+  display: flex;
+}
+
+.filter {
+    margin: 3% 0 0 5%;
+    width: 140px;
+}
+
+.filter li {
+  list-style: none;
+}
+
+.filter li:hover {
+  cursor: pointer;
+}
+
+.filter ul {
+  margin-top: 0;
+  padding-left: 10%
+}
+
+.filter h4 {
+  margin-bottom: 0;
+}
 
 .all-patient-data:hover {
   background-color: lightgray;
@@ -30,7 +58,7 @@ table {
 }
 
 img {
-    height: 17px;
+    height: 20px;
     vertical-align: inherit;
 }
 
@@ -86,6 +114,11 @@ text {
     font-size: 15px;
     font-weight: 300;
     font-family: inherit;
+}
+
+img {
+    height: 13px;
+    vertical-align: inherit;
 }
 
 .disease-data {

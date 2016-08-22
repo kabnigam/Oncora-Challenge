@@ -31,7 +31,7 @@ describe('List(initial state)', () => {
     Chai.expect(wrapper.find('th').at(0).text()).to.equal('Name');
     Chai.expect(wrapper.find('th').at(1).text()).to.equal('MRN');
     Chai.expect(wrapper.find('th').at(2).text()).to.equal('DOB');
-    Chai.expect(wrapper.find('th').at(3).text()).to.equal('Sex');
+    Chai.expect(wrapper.find('th').at(3).text()).to.equal('Demographics');
     Chai.expect(wrapper.find('th').at(4).text()).to.equal('Treatment Site');
   });
 

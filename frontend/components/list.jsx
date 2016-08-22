@@ -79,11 +79,11 @@ class PatientList extends React.Component {
     let rows =
     [[
       <tr>
-        <th onClick={this._setOrder.bind(this, 'name')}>Name <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
-        <th onClick={this._setOrder.bind(this, 'mrn')}>MRN <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
-        <th onClick={this._setOrder.bind(this, 'dob')}>DOB <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
-        <th onClick={this._setOrder.bind(this, 'demographics')}>Demographics <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
-        <th onClick={this._setOrder.bind(this, 'treatment')}>Treatment Site <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
+        <th onClick={this._setOrder.bind(this, 'name')}>Name<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
+        <th onClick={this._setOrder.bind(this, 'mrn')}>MRN<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
+        <th onClick={this._setOrder.bind(this, 'dob')}>DOB<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
+        <th onClick={this._setOrder.bind(this, 'demographics')}>Demographics<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
+        <th onClick={this._setOrder.bind(this, 'treatment')}>Treatment Site<img src='https://d30y9cdsu7xlg0.cloudfront.net/png/24967-200.png'></img></th>
       </tr>
     ]];
 

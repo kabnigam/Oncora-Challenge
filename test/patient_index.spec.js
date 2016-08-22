@@ -31,7 +31,7 @@ describe('PatientIndexItem(initial state)', () => {
     Chai.expect(wrapper.find('td').at(0).text()).to.equal(`${patient.name.last}, ${patient.name.first}`);
     Chai.expect(wrapper.find('td').at(1).text()).to.equal(patient.mrn);
     Chai.expect(wrapper.find('td').at(2).text()).to.equal(patient.dob);
-    Chai.expect(wrapper.find('td').at(3).text()).to.equal(patient.sex);
+    Chai.expect(wrapper.find('td').at(3).text()).to.include(patient.sex);
     Chai.expect(wrapper.find('td').at(4).text()).to.equal(patient.treatment_site);
   });
 

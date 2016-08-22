@@ -29,6 +29,11 @@ table {
   cursor: pointer;
 }
 
+img {
+    height: 17px;
+    vertical-align: inherit;
+}
+
 
 
 .row {

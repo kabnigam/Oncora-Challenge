@@ -29,7 +29,16 @@ class PatientList extends React.Component {
 
   render() {
 
-    let rows = [[<tr><th>Name</th><th>MRN</th><th>DOB</th><th>Sex</th><th>Treatment Site</th></tr>]];
+    let rows = [[
+      <tr>
+        <th>Name <img src='http://downloadicons.net/sites/default/files/sort-icon-84281.png'></img></th>
+        <th>MRN <img src='http://downloadicons.net/sites/default/files/sort-icon-84281.png'></img></th>
+        <th>DOB <img src='http://downloadicons.net/sites/default/files/sort-icon-84281.png'></img></th>
+        <th>Sex <img src='http://downloadicons.net/sites/default/files/sort-icon-84281.png'></img></th>
+        <th>Treatment Site <img src='http://downloadicons.net/sites/default/files/sort-icon-84281.png'></img></th>
+      </tr>
+    ]];
+
     if (this.state.patientData.length > 0) {
       let ordered = this.state.patientData.sort(function(x,y) {
         return x.name.last > y.name.last;

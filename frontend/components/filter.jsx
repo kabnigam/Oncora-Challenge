@@ -7,22 +7,23 @@ class PatientList extends React.Component {
     this.state = {
       age: false,
       sex: false,
-      treatment: false
+      treatment: false,
+
     };
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
 
-    if (this.state.age || this.state.sex || this.state.treatment) {
       document.querySelectorAll('input').forEach(box => {
         box.addEventListener('click', e => {
           this.props.triggerFilter(e.target.value);
         });
       });
-    }
+
   }
 
   _setFilter(filter) {
+
     switch (filter) {
       case 'age':
         this.setState({age: !this.state.age});

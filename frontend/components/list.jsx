@@ -61,8 +61,9 @@ class PatientList extends React.Component {
       }
     }
     else if (col === 'site') {
-
+    
       if (this.state.siteFilter.includes(val)) {
+
         if (this.state.siteFilter.length === 1) {
           this.setState({siteFilter: []});
         }
@@ -71,6 +72,7 @@ class PatientList extends React.Component {
           this.setState({siteFilter: this.state.siteFilter.splice(i, 1)});
         }
       } else {
+
         this.setState({siteFilter: this.state.siteFilter.concat([val]) });
       }
     }
@@ -187,6 +189,7 @@ class PatientList extends React.Component {
     //sort by last name
     if (this.state.patientData.length > 0) {
       let filtered = this._filter();
+
       let ordered = this._orderBy(filtered);
       ordered.forEach(patient => {
         rows.push([<PatientIndexItem key={patient.mrn} patient={patient} age={this._getAge(patient.dob)}/>]);

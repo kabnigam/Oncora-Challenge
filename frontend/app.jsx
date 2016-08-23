@@ -5,6 +5,7 @@ const Router = reactRouter.Router;
 const Route = reactRouter.Route;
 const IndexRoute = reactRouter.IndexRoute;
 const hashHistory = reactRouter.hashHistory;
+
 const PatientList = require('./components/list.jsx');
 const PatientDetail = require('./components/detail.jsx');
 
@@ -27,6 +28,7 @@ const routes = (
   </Route>
 
 );
+
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Router history={hashHistory} routes={routes}></Router>, document.getElementById('main'));

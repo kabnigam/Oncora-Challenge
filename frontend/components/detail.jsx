@@ -80,9 +80,12 @@ class PatientDetail extends React.Component {
   }
 
   _redirectToList() {
+    hashHistory.push('/');
+  }
+
+  componentWillUnmount() {
     d3.selectAll("svg > *").remove();
     d3.selectAll("svg").remove();
-    hashHistory.push('/');
   }
 
   render() {
